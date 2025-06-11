@@ -1,0 +1,150 @@
+.message-bubble {
+  display: flex;
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.message-bubble.user {
+  justify-content: flex-end;
+}
+
+.message-bubble.assistant {
+  justify-content: flex-start;
+}
+
+.message-content {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  max-width: 70%;
+}
+
+.buddy-avatar,
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow);
+}
+
+.buddy-avatar {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+}
+
+.user-avatar {
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  color: white;
+}
+
+.message-text {
+  position: relative;
+  padding: 1rem 1.25rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+
+.message-bubble.user .message-text {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-bottom-right-radius: 8px;
+}
+
+.message-bubble.assistant .message-text {
+  background: var(--bg-white);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-bottom-left-radius: 8px;
+}
+
+.message-text p {
+  margin: 0;
+  font-size: 1rem;
+  white-space: pre-wrap;
+}
+
+.message-time {
+  display: block;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
+
+.message-bubble.user .message-time {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: right;
+}
+
+.message-bubble.assistant .message-time {
+  color: var(--text-light);
+  text-align: left;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .message-content {
+    max-width: 85%;
+    gap: 0.5rem;
+  }
+  
+  .buddy-avatar,
+  .user-avatar {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .message-text {
+    padding: 0.75rem 1rem;
+    border-radius: 16px;
+  }
+  
+  .message-text p {
+    font-size: 0.95rem;
+  }
+  
+  .message-time {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .message-content {
+    max-width: 90%;
+  }
+  
+  .buddy-avatar,
+  .user-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .message-text {
+    padding: 0.6rem 0.9rem;
+    border-radius: 14px;
+  }
+  
+  .message-text p {
+    font-size: 0.9rem;
+  }
+}
