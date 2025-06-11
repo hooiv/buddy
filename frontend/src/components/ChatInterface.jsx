@@ -4,7 +4,7 @@ import MessageBubble from './MessageBubble'
 import TypingIndicator from './TypingIndicator'
 import './ChatInterface.css'
 
-const API_BASE_URL = 'https://buddy-uge1.onrender.com'
+const API_BASE_URL = 'https://buddy-uge1.onrender.com/api'
 
 const ChatInterface = () => {
   const [messages, setMessages] = useState([])
