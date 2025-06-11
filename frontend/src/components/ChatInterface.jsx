@@ -4,7 +4,7 @@ import MessageBubble from './MessageBubble'
 import TypingIndicator from './TypingIndicator'
 import './ChatInterface.css'
 
-const API_BASE_URL = 'http://localhost:8000/api'
+const API_BASE_URL = 'https://buddy-ag5h.vercel.app/api'
 
 const ChatInterface = () => {
   const [messages, setMessages] = useState([])
